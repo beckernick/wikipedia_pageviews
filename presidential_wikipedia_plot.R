@@ -1,6 +1,5 @@
 library(ggplot2)
 library(dplyr)
-library(readr)
 library(data.table)
 library(stringr)
 library(scales)
@@ -37,32 +36,32 @@ plot_raw_data = function() {
                               color = Candidate)) + 
     geom_line(size = 1.5) +
     
-  labs(title = "Views of Presidential Candidates's Wikipedia Pages\nAround the 2016 Election",
+  labs(title = "Views of Presidential Candidates' Wikipedia Pages\nAround the 2016 Election",
        x = "Date",
        y = "Page Views") +
   
   scale_y_continuous(labels = comma) +
 
   theme(panel.grid.minor = element_blank(),
-        legend.title = element_text(size = 15, face = 'bold'),
-        legend.text = element_text(size = 12),
-        axis.text.x = element_text(angle = 45, size = 12),
-        axis.text.y = element_text(size = 12),
-        axis.title = element_text(size = 20),
-        plot.title = element_text(size = 25)
+        legend.title = element_text(size = 25, face = 'bold'),
+        legend.text = element_text(size = 20),
+        axis.text.x = element_text(angle = 45, size = 25),
+        axis.text.y = element_text(size = 25),
+        axis.title = element_text(size = 30),
+        plot.title = element_text(size = 45)
         )
 }
 
 
 png('/users/nickbecker/Documents/R workspace/presidential_wiki_views.png',
-    height = 900, width = 1200)
+    height = 1200, width = 1500)
 plot_raw_data()
 dev.off()
 
 
 
 ########################
-# Normalized Views
+# Normalized View
 ########################
 
 ggplot(presidential_data, aes(date, normalized_view_count,
