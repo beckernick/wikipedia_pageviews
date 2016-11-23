@@ -1,2 +1,2 @@
 # wikipedia_pageviews
-The Election's Effect on Candidate's Wikipedia Page Views
+The Election's Effect on Candidates's Wikipedia Page Views
